@@ -19,6 +19,11 @@ Aşağıdakileri yapın:
 
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
+surucuYasi = 19;
+if (surucuYasi>18) {
+  console.log ("True");} 
+  else if (surucuYasi) 
+  {console.log ("False");}
 
 
 
@@ -33,7 +38,11 @@ Aşağıdakileri yapınız:
 
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
+let birinciDeger = 54;
+let ikinciDeger = '54';
+if (birinciDeger !== ikinciDeger) {birinciDeger=11 ; { console.log("birinciDeger");}}
 
+//* if (birinciDeger !== ikinciDeger)
 
 
 
@@ -49,7 +58,9 @@ Aşağıdakileri yapın:
    İPUCU: Number metoduna bakabilirsin
 */
 
-
+let str = "1999"
+let num = parseInt (str);
+{console.log(num);}
 
 
 /*
@@ -60,10 +71,12 @@ Aşağıdakileri yapın:
    2. Aşağıdaki çarpma fonksiyonunu çağırarak, 2 sayıyı bu fonksiyona iletin
    3. a ve b'yi çarpıp, sonucu dönün
 */
+let x = 19;
+let y = 10;
 
-function carpma(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
-}
+function carpma(x*y){
+  return x*y ; }
+console.log(carpma(x, y)) ;
 
 
 
@@ -77,8 +90,10 @@ Aşağıdakileri yapın:
  3. Hesaplanan köpeğin yaşını dönün.
  */
 
-function kopeginYasi(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function kopeginYasi(insaninYasi){
+  var kopeginYasi=insaninYasi*7;
+  return kopeginYasi;
+
 }
 
 
@@ -104,9 +119,25 @@ Aşağıdakileri oyun isimli fonksiyonu kullanarak yapın.
 OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı yener | veya beraberlik olur.
 */
 
-function oyun(oyuncu, bilgisayar){
-  /*buraya kodunu yazabilirsin*/
+function oyun() {
+  let makina = Math.random () ;
+  let bilgisayar ;
+  if ( makina <= 0.33 ) {bilgisayar ="Taş" ; }
+  else if ( makina >=0.34 && makina <=0.66) {bilgisayar ="Makas" ;}
+  else if (makina >=0.67 && makina <=1) {bilgisayar= "Kağıt"}
+  return bilgisayar ;
 }
+
+function karsilasma (oyuncu, bilgisayar) {
+  if (oyuncu =="Makas" && bilgisayar == "Kağıt") || oyuncu =="Kağıt" && bilgisayar =="Taş" 
+  || oyuncu == "Taş" && bilgisayar =="Makas";
+}
+return "Kazandın";
+
+else if (oyuncu==bilgisayar)
+return "Berabere";
+else ()
+return "Kaybettin";
 
 
 
@@ -120,10 +151,11 @@ Aşağdakileri milDonusturucu fonksiyonunu kullanarak yapın:
 3. Mil değerini geri dönün
 */
 
-function milDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function milDonusturucu(kilometre){
+  return km * 0.6213 ;
 }
 
+{ console.log(milDonusturucu); }
 
 
 //Görev 4b - Santimetreden Feet
@@ -134,8 +166,8 @@ Aşağıdakileri feetDonusturucu fonsiyonunu kullanarak yapın:
 3. feet değerini geri dönün
 */
 
-function feetDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function feetDonusturucu(santimetre){
+  return santimetre / 30.48 ;
 }
 
 
@@ -153,9 +185,13 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yapın:
 4. Bu döngüde, her seferinde cocukSarkisi fonsiyonu çalışsın ve console.log'a dönen metni yazdırsın.
 */
 
-function cocukSarkisi(/*buraya kodunu yazabilirsin*/){
-      /*buraya kodunu yazabilirsin*/
+function cocukSarkisi(sayi){
+  let sarkı=" küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!";
+  return sayi + sarkı;
 }
+let sayi;
+for (sayi=5;sayi>0;sayi--) {
+  console.log(cocukSarkisi(sayi)); }
 
 
 /* Görev 6 : Not Hesaplayıcı */
@@ -173,9 +209,14 @@ Aşağdakileri notHesapla fonksiyonunda yapın.
  dönün
 */
 
-function notHesapla(/*buraya kodunu yazabilirsin*/){
-/*buraya kodunu yazabilirsin*/
+function notHesapla(not){
+if (100>=not && not>=90) return "A aldın" ;
+else if (89>=not && not>=80) return "B aldın" ;
+else if (79>=not && not>=70) return "C aldın" ;
+else if (69>=not && not>=60) return "D aldın" ;
+else if (59>=not && not>=0) return "F aldın" ;
 }
+{ console.log(not) }
 
 
 
@@ -191,9 +232,16 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yapın.
 */
 
 
-function sesliHarfSayaci(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
-}
+function sesliHarfSayaci(alfabe) {
+  const sesliHarfler = [ "a", "e", "ı", "i", "o", "ö", "u", "ü"] ;
+  let toplam = 0 ;
+  for (let harf of alfabe.toLowerCase()) {
+    if (sesliHarfler.includes(harf)) {
+      toplam++; }}
+  
+      console.log(`Cümlede ${toplam} adet sesli harf vardır`);
+      return toplam;
+    }
 
 
 
